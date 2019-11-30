@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Chronometer;
 
 import androidx.annotation.Nullable;
 
@@ -33,6 +34,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
     private Bitmap eraserBitmap;
     private Bitmap pencilBitmap;
     private Bitmap littlePencilBitmap;
+
 
 
     public GameView(Context context) {

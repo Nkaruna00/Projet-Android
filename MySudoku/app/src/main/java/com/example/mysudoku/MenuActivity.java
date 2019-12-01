@@ -16,7 +16,13 @@ public class MenuActivity extends AppCompatActivity {
 
     public void playButton (View v){
         Intent i = new Intent(this,MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
+        finish();
+    }
+
+    public void exitActivity (View v){
+        finish();
     }
 
 }

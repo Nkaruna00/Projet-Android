@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Chronometer;
 
@@ -37,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         if(compareTabs(gameboard) == true){
             System.out.println("Win !");
             Intent i = new Intent(this,WinActivity.class);
-
-            i.putExtra("chronometre",chronometer.getText().toString());
-            Log.d("chrono","" + chronometer.getText().toString());
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.putExtra("chrono",chronometer.getText().toString());
             startActivity(i);
+            finish();
 
             return true;
         }
@@ -49,4 +48,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void exitActivity (View v){
+        finish();
+    }
 }

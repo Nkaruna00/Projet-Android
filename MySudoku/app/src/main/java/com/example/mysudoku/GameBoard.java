@@ -1,5 +1,6 @@
 package com.example.mysudoku;
 
+import android.content.Intent;
 import android.util.Log;
 @SuppressWarnings("WeakerAccess")
 
@@ -271,7 +272,7 @@ public class GameBoard {
 
     public static void removeKDigits(GameBoard gameboard)
     {
-        int count = 20;
+        int count = 3;
         while (count != 0)
         {
             int cellId = randomGenerator(9*9);
@@ -354,7 +355,7 @@ public class GameBoard {
 
  */
 
-
+    /*
     boolean compareTabs(GameBoard gameboard){
            for(int i =0; i < 9; ++i){
                for(int j = 0; j < 9; ++j){
@@ -369,6 +370,7 @@ public class GameBoard {
     boolean checkWin(GameBoard gameboard){
            if(compareTabs(gameboard) == true){
                System.out.println("Win !");
+
                return true;
            }
            else{
@@ -376,7 +378,7 @@ public class GameBoard {
            }
     }
 
-
+*/
 
     public static GameBoard getGameBoard( GameLevel level ) {
 

@@ -1,6 +1,7 @@
 package com.example.mysudoku;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -92,8 +93,12 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
                 rectF = new RectF(buttonLeft, buttonTop, buttonLeft + buttonWidth, buttonTop + buttonWidth);
                 if (rectF.contains(e.getX(), e.getY())) {
                     gameBoard.pushValue(i);
-                    if(gameBoard.checkWin(gameBoard)){
+                    //MainActivity mActivity= new MainActivity();
+                    if(((MainActivity)getContext()).checkWin(gameBoard)){
                         Log.d("TAG DE VICTOIRE","TU A GAGNÉ");
+                        ;
+
+
 
                     }
                     //Log.d("TAG DE VICTOIRE","TU A GAGNÉ" + gameBoard.compareTabs(gameBoard));

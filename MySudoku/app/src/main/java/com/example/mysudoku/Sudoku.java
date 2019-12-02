@@ -3,7 +3,7 @@ package com.example.mysudoku;
 public class Sudoku {
 
 /*
-    l'algorithme de génération de Sudoku à été récupéré sur https://www.geeksforgeeks.org/program-sudoku-generator/
+    L'algorithme de génération de Sudoku à été récupéré sur https://www.geeksforgeeks.org/program-sudoku-generator/
 
  */
 
@@ -162,7 +162,7 @@ public class Sudoku {
         // complete game
         public void removeKDigits()
         {
-            int count = 20;
+            int count = 1;
             while (count != 0)
             {
                 int cellId = randomGenerator(N*N) - 1;

@@ -22,7 +22,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
     private GestureDetector gestureDetector;
 
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private GameBoard gameBoard = GameBoard.getGameBoard( GameLevel.MEDIUM );
+    private GameBoard gameBoard = GameBoard.getGameBoard();
 
 
     private float gridWidth;
@@ -69,7 +69,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
     }
 
     @Override
-    public boolean onSingleTapUp(MotionEvent e) {  // PRINCIPAL
+    public boolean onSingleTapUp(MotionEvent e) {
         RectF rectF;
 
 

@@ -7,7 +7,7 @@ import android.util.Log;
 public class GameBoard {
 
     /**
-     * This class represent one cell and it's informations.
+     * UNE CELLULE
      */
     public static class GameCell {
         public int getRealValue() {
@@ -56,9 +56,6 @@ public class GameBoard {
     }
 
 
-
-
-    public GameLevel level;
     public boolean bigNumber = true;
 
 
@@ -71,8 +68,8 @@ public class GameBoard {
 
 
 
-    private GameBoard( GameLevel level, GameCell [][] cells ) {
-        this.level = level;
+    private GameBoard(GameCell [][] cells ) {
+
         this.cells = cells;
     }
 
@@ -158,44 +155,40 @@ public class GameBoard {
 
 
 
-    public static GameBoard getGameBoard( GameLevel level ) {
+    public static GameBoard getGameBoard() {
 
 
+        GameBoard gameboard = new GameBoard(new GameCell[][]{
 
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0) },
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(4,0), new GameCell(9,0) },
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0) },
 
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0) },
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0) },
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0) },
 
-
-        GameBoard gameboard = new GameBoard(level,new GameCell[][]{
-
-                { new GameCell(9,0), new GameCell(2,0), new GameCell(8,0),
-                        new GameCell(7,0), new GameCell(5,0), new GameCell(4,0),
-                        new GameCell(1,0), new GameCell(3,0), new GameCell(6,0) },
-                { new GameCell(6,0), new GameCell(7,0), new GameCell(1,0),
-                        new GameCell(8,0), new GameCell(2,0), new GameCell(3,0),
-                        new GameCell(5,0), new GameCell(4,0), new GameCell(9,0) },
-                { new GameCell(3,0), new GameCell(5,0), new GameCell(4,0),
-                        new GameCell(9,0), new GameCell(1,0), new GameCell(6,0),
-                        new GameCell(2,0), new GameCell(7,0), new GameCell(8,0) },
-
-                { new GameCell(4,0), new GameCell(9,0), new GameCell(6,0),
-                        new GameCell(2,0), new GameCell(3,0), new GameCell(7,0),
-                        new GameCell(8,0), new GameCell(5,0), new GameCell(1,0) },
-                { new GameCell(8,0), new GameCell(1,0), new GameCell(5,0),
-                        new GameCell(4,0), new GameCell(6,0), new GameCell(9,0),
-                        new GameCell(7,0), new GameCell(2,0), new GameCell(3,0) },
-                { new GameCell(7,0), new GameCell(3,0), new GameCell(2,0),
-                        new GameCell(5,0), new GameCell(8,0), new GameCell(1,0),
-                        new GameCell(9,0), new GameCell(6,0), new GameCell(4,0) },
-
-                { new GameCell(5,0), new GameCell(4,0), new GameCell(3,0),
-                        new GameCell(1,0), new GameCell(9,0), new GameCell(2,0),
-                        new GameCell(6,0), new GameCell(8,0), new GameCell(7,0) },
-                { new GameCell(2,0), new GameCell(6,0), new GameCell(9,0),
-                        new GameCell(3,0), new GameCell(7,0), new GameCell(8,0),
-                        new GameCell(4,0), new GameCell(1,0), new GameCell(5,0) },
-                { new GameCell(1,0), new GameCell(8,0), new GameCell(7,0),
-                        new GameCell(6,0), new GameCell(4,0), new GameCell(5,0),
-                        new GameCell(3,0), new GameCell(9,0), new GameCell(2,0) }
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0) },
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0) },
+                { new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0),
+                        new GameCell(0,0), new GameCell(0,0), new GameCell(0,0) }
         });
 
 

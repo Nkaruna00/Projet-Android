@@ -2,7 +2,10 @@ package com.example.mysudoku;
 
 public class Sudoku {
 
+/*
+    l'algorithme de génération de Sudoku à été récupéré sur https://www.geeksforgeeks.org/program-sudoku-generator/
 
+ */
 
         int[] mat[];
         int N; // number of columns/rows.
@@ -159,7 +162,7 @@ public class Sudoku {
         // complete game
         public void removeKDigits()
         {
-            int count = 1;
+            int count = 20;
             while (count != 0)
             {
                 int cellId = randomGenerator(N*N) - 1;

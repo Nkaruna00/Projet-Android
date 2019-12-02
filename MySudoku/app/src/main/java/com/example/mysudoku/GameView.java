@@ -72,36 +72,36 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
     public boolean onSingleTapUp(MotionEvent e) {  // PRINCIPAL
         RectF rectF;
 
-         // POUR VOI SI JE CLIQUE SUR LES BOUTTONS
+
         if ( e.getY() < gridWidth ) {
             int cellX = (int)( e.getX() / cellWidth );
             int cellY = (int)( e.getY() / cellWidth );
 
             gameBoard.currentCellX = cellX;
             gameBoard.currentCellY = cellY;
-            postInvalidate(); // POUR FORCER UNE ACTUALISATION GRAPHIQUE SANS 9A ON MET A JOUR SEULEMENT LES DONNEESS<
+            postInvalidate();
             return true;
         }
 
-        float buttonLeft = buttonMargin; // POUR VOIR SI CLIQUE SUR LES BOUTONS
+        float buttonLeft = buttonMargin;
         float buttonTop = 9 * cellWidth + gridSeparatorSize / 2;
 
         if ( gameBoard.currentCellX != -1 && gameBoard.currentCellY != -1 ) {
 
-            // --- Check number buttons ---
+
             for (int i = 1; i <= 9; i++) {
                 rectF = new RectF(buttonLeft, buttonTop, buttonLeft + buttonWidth, buttonTop + buttonWidth);
                 if (rectF.contains(e.getX(), e.getY())) {
                     gameBoard.pushValue(i);
-                    //MainActivity mActivity= new MainActivity();
+
                     if(((MainActivity)getContext()).checkWin(gameBoard)){
                         Log.d("TAG DE VICTOIRE","TU A GAGNÉ");
-                        ;
+
 
 
 
                     }
-                    //Log.d("TAG DE VICTOIRE","TU A GAGNÉ" + gameBoard.compareTabs(gameBoard));
+
                     for(int p = 0; p < 9; ++p){
                         for(int j= 0; j < 9; ++j){
                             Log.d("tableau_assume","Valeur: " + p + "|" + j + " = " + gameBoard.cells[p][j].getAssumedValue());
@@ -122,7 +122,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
                 }
             }
 
-            // --- eraser button ---
+
             rectF = new RectF(buttonLeft, buttonTop, buttonLeft + buttonWidth, buttonTop + buttonWidth);
             if (rectF.contains(e.getX(), e.getY())) {
                 gameBoard.clearCell();
@@ -132,7 +132,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
             buttonLeft += buttonWidth + buttonMargin;
         }
 
-        // --- pencil button ---
+
         rectF = new RectF( buttonLeft, buttonTop, buttonLeft+buttonWidth, buttonTop+buttonWidth );
         if ( rectF.contains( e.getX(), e.getY() ) ) {
             gameBoard.bigNumber = ! gameBoard.bigNumber; // SI IL EST GRAND IL DEVIENT PETIT ET VICE VERSA
@@ -159,19 +159,19 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
     }
 
     @Override
-    // A l'ouverture de l'activite
+
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        // We compute some sizes
-        gridSeparatorSize = (w / 9f) / 20f; // trait de separation entre chaque mini case
 
-        gridWidth = w;    // grille taille de l'écren                              // Size of the grid (it's a square)
-        cellWidth = gridWidth / 9f;                     // Size of a cell (it's a square too)
+        gridSeparatorSize = (w / 9f) / 20f;
 
-        // CES INFORMATIONS LA PAS BESOIN SI ON UTILISE LES BUTTON ANDROID
-        buttonWidth = w / 7f;                           // Size of a button division par 7 car 7 separateurs de button
-        buttonRadius = buttonWidth / 10f;               // Size of the rounded corner for a button
-        buttonMargin = (w - 6*buttonWidth) / 7f;        // Margin between two buttons
+        gridWidth = w;    // grille taille de l'écren
+        cellWidth = gridWidth / 9f;
+
+
+        buttonWidth = w / 7f;
+        buttonRadius = buttonWidth / 10f;
+        buttonMargin = (w - 6*buttonWidth) / 7f;
 
 
         // We resize for this screen the two images
@@ -263,7 +263,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
 
                 if (gameBoard.cells[y][x].getAssumedValue() != 0) {
 
-                    // Draw the assumed value for the cell.
+
                     paint.setColor(0xFF000000);
                     paint.setTextSize( cellWidth*0.7f );
                     canvas.drawText("" + gameBoard.cells[y][x].getAssumedValue(),
@@ -351,7 +351,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
         }
 
         //  HIGHTLIGHT LA CELLULE SELECTIONNE
-        // --- Draw border for the current selected cell ---
+        //
         if ( gameBoard.currentCellX != -1 && gameBoard.currentCellY != -1 ) {
             paint.setColor( 0xFF_30_3F_9F );
             paint.setStrokeWidth( gridSeparatorSize * 1.5f ); // TAILLE DU STYLO PLUS GRANDE  ON MULTIPLIE OAR 1.5F CAR LA FONCTION PREND DES FLOTTANT ET PAS DES DOUBLES
@@ -365,8 +365,8 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
             paint.setStrokeWidth( 1 );
         }
 
-        // --- Buttons bar ---
-        int screenHeight = getResources().getDisplayMetrics().heightPixels; // taille ecran
+
+        int screenHeight = getResources().getDisplayMetrics().heightPixels;
         int screenWidth = getResources().getDisplayMetrics().widthPixels;
 
         float buttonsTop = 9*cellWidth + gridSeparatorSize/2;  // A QUELLE HAUTEUR ON PLACE LE BUTTON + SEPERAATOR POUR PAS ECRASER SUR LA LIGNE
@@ -382,9 +382,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
 
         for (int i = 1; i <= 9; i++) {
             paint.setColor( 0xFFFFFFFF ); // CEST DU BLANC
-            // Attention aux new !!! Mais ici, on n'est pas trop gourmand
-            // Il existe une autre version de drawRoundRect, mais elle necessite
-            // que vous modifiez la version minimale supportee pour Android :-(
+
             RectF rectF = new RectF(buttonLeft, buttonTop,
                     buttonLeft + buttonWidth, buttonTop + buttonWidth);
             canvas.drawRoundRect(rectF, buttonRadius, buttonRadius, paint); // ROUND RECT POUR AVOIR DES ANGLES ARRONDIS A PARTIR DU BUTTON RADIUS
@@ -392,7 +390,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
             paint.setColor( 0xFF000000 );
             canvas.drawText("" + i, rectF.centerX(), rectF.top + rectF.height() * 0.75f, paint);
 
-            if (i != 6) { // ON DESSINE 1 BOUTON ? ON DECALE ET QUAND ON EN A MIS 6 ON RESET LE LEFT ET DESCEND DE HAUTEUR
+            if (i != 6) { // ON DESSINE 1 BOUTON , ON DECALE ET QUAND ON EN A MIS 6 ON RESET LE LEFT ET DESCEND DE HAUTEUR
                 buttonLeft += buttonWidth + buttonMargin;
             } else {
                 buttonLeft = buttonMargin;

@@ -160,7 +160,7 @@ public class GameBoard {
 
     public static GameBoard getGameBoard( GameLevel level ) {
 
-        if ( level != GameLevel.MEDIUM ) throw new RuntimeException( "Not actually implemented" );
+
 
 
 

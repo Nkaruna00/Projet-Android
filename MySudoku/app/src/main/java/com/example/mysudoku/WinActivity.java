@@ -15,7 +15,7 @@ public class WinActivity extends MainActivity {
         setContentView(R.layout.activity_win);
         Intent i = getIntent();
         TextView text =(TextView) findViewById(R.id.chrono);
-        text.setText("in " + i.getStringExtra("chrono"));
+        text.setText("en " + i.getStringExtra("chrono"));
     }
 
     public void playAgain (View v){

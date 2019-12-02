@@ -162,7 +162,7 @@ public class Sudoku {
         // complete game
         public void removeKDigits()
         {
-            int count = 1;
+            int count = 20;
             while (count != 0)
             {
                 int cellId = randomGenerator(N*N) - 1;

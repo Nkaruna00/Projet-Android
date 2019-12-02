@@ -43,7 +43,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
         this.init();
     }
 
-    public GameView(Context context, @Nullable AttributeSet attrs) { // constructor utilise quannd on a jouter des elements a partir du designer
+    public GameView(Context context, @Nullable AttributeSet attrs) { // constructor utilise quannd on ajoute des elements a partir du designer
         super(context, attrs);
         this.init();
     }
@@ -57,7 +57,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
         return gestureDetector.onTouchEvent(event);
     }
 
-    // Override from OnGestureDectector
+    // Override de OnGestureDectector
     @Override
     public boolean onDown(MotionEvent e) {
         return true;
@@ -174,7 +174,7 @@ public class GameView extends View implements GestureDetector.OnGestureListener 
         buttonMargin = (w - 6*buttonWidth) / 7f;
 
 
-        // We resize for this screen the two images
+
         eraserBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.gomme);
         eraserBitmap = Bitmap.createScaledBitmap(eraserBitmap,
                 (int) (buttonWidth*0.8f), (int) (buttonWidth*0.8f), false);

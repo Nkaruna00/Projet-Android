@@ -182,19 +182,8 @@ public class Sudoku {
             }
         }
 
-        // Print sudoku
-        public void printSudoku()
-        {
-            for (int i = 0; i<N; i++)
-            {
-                for (int j = 0; j<N; j++)
-                    System.out.print(mat[i][j] + " ");
-                System.out.println();
-            }
-            System.out.println();
-        }
 
-        // Driver code
+
 
 }
 
